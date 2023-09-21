@@ -228,12 +228,19 @@ main {
               > p {
                 font-size: 14px;
                 text-align: right;
+                letter-spacing: 1.5px;
               }
               > div {
                 margin: auto;
+                background-color: red;
+                padding-top: 56.2963%;
+                width: 100%;
+                position: relative;
                 iframe {
+                  position: absolute;
+                  top: 0;
                   max-width: 100%;
-                  height: auto;
+                  height: 100%;
                   border: 0;
                 }
               }
@@ -247,7 +254,6 @@ main {
               &:first-child {
                 font-size: 22px;
                 line-height: 2em;
-                margin-bottom: 40px;
               }
               &:nth-child(2) {
                 font-size: 16px;
@@ -262,7 +268,6 @@ main {
             > div {
               font-size: 15px;
               width: 240px;
-              padding-top: 50px;
               padding-bottom: 20px;
               margin-bottom: 60px;
               border-bottom: 1px solid black;
@@ -569,6 +574,31 @@ footer {
     > section.practice {
       .practice-row {
         display: block;
+        .practice-col {
+          display: flex;
+          flex-direction: column;
+          &:last-child {
+            > p {
+              &:first-child {
+                order: 1;
+                padding: 10px 0;
+                margin: 0;
+              }
+              &:nth-child(2) {
+                order: 3;
+                margin-top: 35px;
+              }
+              &:nth-child(3) {
+                order: 2;
+                padding: 30px 0;
+              }
+            }
+            > div {
+              order: 4;
+              padding-top: 20px;
+            }
+          }
+        }
       }
     }
     > section.report {
@@ -738,6 +768,12 @@ footer {
             width: 50%;
             &:last-child {
               margin-right: 5.5%;
+            }
+            > p:first-child {
+              margin-bottom: 40px;
+            }
+            > div {
+              padding-top: 50px;
             }
           }
         }

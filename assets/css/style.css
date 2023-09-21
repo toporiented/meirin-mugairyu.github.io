@@ -229,15 +229,22 @@ main section.practice .container .practice-row .practice-col:first-child > div {
 main section.practice .container .practice-row .practice-col:first-child > div > p {
   font-size: 14px;
   text-align: right;
+  letter-spacing: 1.5px;
 }
 
 main section.practice .container .practice-row .practice-col:first-child > div > div {
   margin: auto;
+  background-color: red;
+  padding-top: 56.2963%;
+  width: 100%;
+  position: relative;
 }
 
 main section.practice .container .practice-row .practice-col:first-child > div > div iframe {
+  position: absolute;
+  top: 0;
   max-width: 100%;
-  height: auto;
+  height: 100%;
   border: 0;
 }
 
@@ -248,7 +255,6 @@ main section.practice .container .practice-row .practice-col:last-child > p a {
 main section.practice .container .practice-row .practice-col:last-child > p:first-child {
   font-size: 22px;
   line-height: 2em;
-  margin-bottom: 40px;
 }
 
 main section.practice .container .practice-row .practice-col:last-child > p:nth-child(2) {
@@ -265,7 +271,6 @@ main section.practice .container .practice-row .practice-col:last-child > p:nth-
 main section.practice .container .practice-row .practice-col:last-child > div {
   font-size: 15px;
   width: 240px;
-  padding-top: 50px;
   padding-bottom: 20px;
   margin-bottom: 60px;
   border-bottom: 1px solid black;
@@ -552,6 +557,27 @@ footer > section.footer-section .container .footer-col {
   main > section.practice .practice-row {
     display: block;
   }
+  main > section.practice .practice-row .practice-col {
+    display: flex;
+    flex-direction: column;
+  }
+  main > section.practice .practice-row .practice-col:last-child > p:first-child {
+    order: 1;
+    padding: 10px 0;
+    margin: 0;
+  }
+  main > section.practice .practice-row .practice-col:last-child > p:nth-child(2) {
+    order: 3;
+    margin-top: 35px;
+  }
+  main > section.practice .practice-row .practice-col:last-child > p:nth-child(3) {
+    order: 2;
+    padding: 30px 0;
+  }
+  main > section.practice .practice-row .practice-col:last-child > div {
+    order: 4;
+    padding-top: 20px;
+  }
   main > section.report .report-row .report-col:not(:last-child) {
     margin-bottom: 70px;
   }
@@ -672,6 +698,12 @@ footer > section.footer-section .container .footer-col {
   }
   main > section.practice .container .practice-row .practice-col:last-child {
     margin-right: 5.5%;
+  }
+  main > section.practice .container .practice-row .practice-col > p:first-child {
+    margin-bottom: 40px;
+  }
+  main > section.practice .container .practice-row .practice-col > div {
+    padding-top: 50px;
   }
   main > section.report .report-row {
     display: grid;
