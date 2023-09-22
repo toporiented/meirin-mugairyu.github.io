@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOP - 明倫無外流 明倫館</title>
-    <link rel="stylesheet" href="./assets/css/style.min.css" />
+    <link rel="stylesheet" href="./assets/css/index.min.css" />
     <link
       rel="icon"
       href="https://meirin-mugairyu.jp/wp-content/uploads/2023/03/cropped-favicon-192x192.png"
       sizes="192x192"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
     <header>
@@ -32,9 +38,11 @@
           <div>
             <div class="navbar-menu">
               <ul class="navbar-nav">
-                <li><a href="#" class="active">TOP</a></li>
+                <li><a href="./index.html" class="active">TOP</a></li>
                 <li><a href="./about.html">各稽古場所・指導者紹介</a></li>
-                <li><a href="#">稽古内容及び流派・宗家について</a></li>
+                <li>
+                  <a href="./ryuha.html">稽古内容及び流派・宗家について</a>
+                </li>
                 <li class="dropdown">
                   <a href="#">
                     活動報告
@@ -83,7 +91,6 @@
     <main>
       <section class="hero">
         <div>
-          <!-- <img src="./assets/images/KV4.png" alt="" /> -->
           <img
             src="https://meirin-mugairyu.jp/wp-content/uploads/2023/08/logo_JP_0823.png"
             alt="logo"
@@ -275,29 +282,29 @@
           </div>
           <div class="link-grid-col">
             <p>
-              ヨーロッパ無外流明倫派
+              ヨーロッパ無外流明倫派 &nbsp;<br class="line-break" />
               <a href="http://mugai-ryu.org/">http://mugai-ryu.org/</a>
             </p>
             <p>
-              形山会HP
+              形山会HP&nbsp;<br class="line-break" />
               <a href="http://keizankais.web.fc2.com/"
                 >http://keizankais.web.fc2.com/</a
               >
             </p>
             <p>
-              形山会(twitter)
+              形山会(twitter)&nbsp;<br class="line-break" />
               <a href="　https://twitter.com/keizankais"
                 >　https://twitter.com/keizankais</a
               >
             </p>
             <p>
-              形山会(facebook)
+              形山会(facebook)&nbsp;<br class="line-break" />
               <a href="https://www.facebook.com/keizankaisaitama/"
                 >https://www.facebook.com/keizankaisaitama/</a
               >
             </p>
             <p>
-              信州形山会
+              信州形山会&nbsp;<br class="line-break" />
               <a href="http://sinshukeizankai.naganoblog.jp/"
                 >http://sinshukeizankai.naganoblog.jp/</a
               >
@@ -341,20 +348,13 @@
 
     <script src="./assets/js/js.js"></script>
     <script>
-      var flag = false;
-      function handleToggleBar() {
-        if (flag) {
-          document.getElementsByClassName("navbar-menu")[0].style.display =
-            "none";
-        } else {
-          document.getElementsByClassName("navbar-menu")[0].style.display =
-            "block";
-        }
-        flag = !flag;
-      }
-      var date = new Date();
-      document.getElementById("copyright").innerHTML =
-        "©" + date.getFullYear() + " Meirinkan";
+      $(document).ready(function () {
+        $(".navbar-toggler").click(function () {
+          $(".navbar-menu").slideToggle("slow");
+        });
+        var date = new Date();
+        $("#copyright").html("©" + date.getFullYear() + " Meirinkan");
+      });
     </script>
   </body>
 </html>

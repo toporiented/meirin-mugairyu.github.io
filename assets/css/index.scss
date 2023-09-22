@@ -95,6 +95,8 @@ header {
 }
 
 main {
+  width: 100vw;
+  margin: auto;
   .container {
     max-width: 1400px;
   }
@@ -174,6 +176,9 @@ main {
             margin: auto;
             background-color: #fff;
             border-top: 1px solid black;
+            padding: 30px 10px;
+            line-height: 2.25em;
+            word-wrap: break-word;
             > div {
               &:first-child {
                 font-weight: 500;
@@ -195,7 +200,6 @@ main {
   }
 
   section.practice {
-    padding: 140px 0;
     background-image: linear-gradient(
         180deg,
         rgba(242, 242, 242, 0.7) 0%,
@@ -210,15 +214,10 @@ main {
       list-style: none;
       padding: 0;
       .practice-header {
-        font-size: 27px;
-        text-align: center;
-        letter-spacing: 2px;
+        @include header;
       }
       .practice-boundary {
-        width: 80px;
-        height: 23px;
-        margin: auto;
-        border-top: 2px $green-color solid;
+        @include boundary;
         margin-top: 25px;
       }
       .practice-row {
@@ -345,21 +344,15 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 140px 0;
     background-image: url("/assets/images/bg4.png");
     background-position: left top;
     background-size: cover;
-
     > div {
       > p {
-        font-size: 27px;
-        letter-spacing: 2px;
+        @include header;
       }
       .detail-boundary {
-        width: 80px;
-        height: 23px;
-        margin: auto;
-        border-top: 2px $green-color solid;
+        @include boundary;
         margin-top: 25px;
         margin-bottom: 60px;
       }
@@ -382,22 +375,16 @@ main {
     }
   }
   section.report {
-    padding: 140px 0;
     background: #fafafa url("/assets/images/bg03-min-scaled.jpeg") no-repeat 50%;
     background-size: cover;
     .container {
       padding: 0;
       width: 90%;
       > p:first-child {
-        font-size: 27px;
-        text-align: center;
-        letter-spacing: 2px;
+        @include header;
       }
       > div:first-of-type {
-        width: 80px;
-        height: 23px;
-        margin: auto;
-        border-top: 2px $green-color solid;
+        @include boundary;
         margin-top: 25px;
         margin-bottom: 90px;
       }
@@ -431,7 +418,6 @@ main {
     }
   }
   > section.link-section {
-    padding: 140px 0;
     background-color: #fff;
     background-image: linear-gradient(
         180deg,
@@ -454,8 +440,8 @@ main {
         > p {
           font-size: 14px;
           font-weight: 300;
-          letter-spacing: 1px;
-          line-height: 3.25em;
+          letter-spacing: 1.5px;
+          word-wrap: break-word;
           > a {
             color: #ffffff;
           }
@@ -481,13 +467,12 @@ footer {
       text-align: center;
       margin-top: 84px;
       > p {
-        font-size: 12px;
         color: #fff;
         letter-spacing: 2px;
       }
     }
     .footer-row2 {
-      margin-top: 40px;
+      margin-top: 30px;
     }
     .footer-col {
       width: 100%;
@@ -517,15 +502,17 @@ footer {
           li {
             list-style-type: none;
             border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-            padding: 12px 37.25px;
             &:hover {
               opacity: 0.7;
               background-color: rgba(0, 0, 0, 0.03);
             }
+            a {
+              display: block;
+              padding: 12px 37.25px;
+            }
           }
           .mobile-display-dropdown {
             li:not(:first-child) {
-              padding-left: 40px;
               margin-left: 40px;
             }
           }
@@ -656,6 +643,44 @@ footer {
         }
       }
     }
+    > section.link-section {
+      .container {
+        display: block;
+        margin: auto;
+        text-align: center;
+        .link-grid-col:first-child {
+          p {
+            // padding: 50px 0;
+            margin-bottom: 80px;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    .container {
+      .footer-row1 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        .footer-col {
+          &:first-child,
+          &:nth-child(2) {
+            padding-bottom: 30px;
+          }
+        }
+      }
+      .footer-row2 {
+        display: block;
+        .footer-col {
+          padding: 15px 0;
+        }
+      }
+      > div:last-child {
+        > p {
+          font-size: 13px;
+        }
+      }
+    }
   }
 }
 
@@ -673,46 +698,107 @@ footer {
     display: none;
   }
   main {
-    > section {
-      &.hero {
-        background-image: url("/assets/images/KV-sp.png");
-        background-position: center bottom 0px;
-        padding-top: 34%;
-        padding-bottom: 36%;
-        > div {
-          > p {
-            &:first-of-type {
-              font-size: 1.6rem;
-              margin: 3.5rem 0;
-            }
-            &:last-child {
-              font-size: 1.6rem;
-              line-height: 3rem;
-            }
+    > section.hero {
+      background-image: url("/assets/images/KV-sp.png");
+      background-position: center bottom 0px;
+      padding: 33% 0;
+      > div {
+        > p {
+          &:first-of-type {
+            font-size: 1.6rem;
+            margin: 3.5rem 0;
           }
-          .main-log {
-            width: 300px;
+          &:last-child {
+            font-size: 1.6rem;
+            line-height: 3rem;
+          }
+        }
+        .main-log {
+          width: 300px;
+        }
+      }
+    }
+    > section.img-intro {
+      padding: 80px 0;
+      .container {
+        > div {
+          &:first-child {
+            padding: 50px 30px;
+          }
+          &:nth-child(3) {
+            .branch-list {
+              width: auto;
+            }
           }
         }
       }
-      &.img-intro {
-        padding: 80px 0;
-        .container {
-          > div {
-            &:first-child {
-              padding: 50px 30px;
+    }
+    > section.practice {
+      padding: 80px 0;
+      .practice-boundary {
+        margin-bottom: 50px;
+      }
+    }
+    > section.detail-intro {
+      padding: 80px 0;
+    }
+    > section.report {
+      padding: 80px 0;
+    }
+    > section.link-section {
+      padding: 80px 0;
+      .container {
+        display: block;
+        margin: auto;
+        text-align: center;
+        .link-grid-col {
+          &:first-child {
+            p {
+              margin-bottom: 50px;
             }
-            &:last-child {
-              .branch-list {
-                width: auto;
+          }
+          &:last-child {
+            > p {
+              line-height: 2.25em;
+              &:not(:last-child) {
+                padding-bottom: 14px;
               }
             }
           }
         }
       }
-      &.practice {
-        .practice-boundary {
-          margin-bottom: 50px;
+    }
+  }
+  footer {
+    .container {
+      > div:last-child {
+        > p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  footer {
+    .container {
+      .footer-row1 {
+        display: block;
+        .footer-col {
+          &:first-child,
+          &:nth-child(2) {
+            padding: 15px 0;
+          }
+          padding: 0;
+          padding: 15px 0;
+        }
+      }
+      .footer-row2 {
+        display: block;
+        margin: 0;
+        .footer-col {
+          padding: 15px 0;
         }
       }
     }
@@ -740,10 +826,35 @@ footer {
         }
       }
     }
+    > section.practice {
+      padding: 140px 0;
+    }
+    > section.detail-intro {
+      padding: 140px 0;
+    }
+    > section.report {
+      padding: 140px 0;
+    }
+    > section.link-section {
+      padding: 140px 0;
+      .container {
+        .line-break {
+          display: none;
+        }
+        > div:last-child {
+          > p {
+            line-height: 3.25em;
+          }
+        }
+      }
+    }
   }
 }
 
 @media (min-width: 980px) {
+  header .navbar {
+    padding: 0 20px;
+  }
   main {
     > section.hero > div {
       > p:first-of-type {
@@ -785,10 +896,6 @@ footer {
               display: grid;
               grid-template-columns: 30% 70%;
               gap: 25px;
-              > div {
-                padding: 30px 10px;
-                line-height: 2.25em;
-              }
             }
           }
         }
@@ -842,7 +949,7 @@ footer {
         .link-grid-col {
           margin: auto;
           &:first-child {
-            width: 100%;
+            @include header;
             text-align: center;
             width: 50%;
             margin-right: 77px;
@@ -864,16 +971,16 @@ footer {
         display: grid;
         grid-template-columns: 33.33% 33.33% 33.33%;
       }
+      > div:last-child {
+        > p {
+          font-size: 12px;
+        }
+      }
     }
   }
 }
 
 @media (min-width: 1150px) {
-  .navbar {
-    .container {
-      max-width: 1960px;
-    }
-  }
   .btn-contact {
     margin-left: 20px;
   }

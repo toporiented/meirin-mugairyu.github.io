@@ -3,3 +3,41 @@
 $green-color: #617e53;
 $link-color: #2ea3f2;
 $link-hover-color: #377c12;
+
+@mixin header {
+  font-size: 27px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1.75em;
+  text-align: center;
+}
+
+@mixin subheader {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 2em;
+}
+
+@mixin boundary {
+  width: 80px;
+  height: 23px;
+  margin: auto;
+  border-top: 2px $green-color solid;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+@mixin hero-header {
+  font-weight: 600;
+  text-shadow: 0em 0em 0.3em rgba(0, 0, 0, 0.4);
+  @media only screen and (max-width: 980px) {
+    font-size: 34px;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 30px;
+  }
+  @media only screen and (min-width: 980px) {
+    font-size: 40px;
+  }
+}
