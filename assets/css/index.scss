@@ -104,13 +104,13 @@ main {
     background-image: url("/assets/images/KV4.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center bottom -20px;
+    background-position: center bottom 0px;
     > div {
       text-align: center;
       color: white;
       padding: 20% 0;
       > p {
-        font-weight: bold;
+        font-weight: 500;
       }
     }
   }
@@ -701,7 +701,7 @@ footer {
     > section.hero {
       background-image: url("/assets/images/KV-sp.png");
       background-position: center bottom 0px;
-      padding: 33% 0;
+      padding: 16% 0;
       > div {
         > p {
           &:first-of-type {
