@@ -104,11 +104,9 @@ main {
     background-repeat: no-repeat;
     background-position: center bottom 0px;
     background-size: cover;
-    padding: 7% 0;
     > div {
       text-align: center;
       color: white;
-      padding: 9.5% 0;
       > p {
         @include hero-header;
       }
@@ -369,6 +367,8 @@ footer {
 @media only screen and (max-width: 980px) {
   main {
     > section.hero > div {
+      padding-top: 15%;
+      padding-bottom: 17%;
       > p {
         font-size: 34px;
       }
@@ -415,7 +415,7 @@ footer {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:767px) {
   .navbar {
     padding: 0 12px;
     .container {
@@ -487,7 +487,7 @@ footer {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width:767px) {
   .favicon {
     display: none;
   }
@@ -510,6 +510,8 @@ footer {
   }
   main {
     > section.hero > div {
+      padding-top: 11%;
+      padding-bottom: 14%;
       font-size: 40px;
       .main-log {
         width: 530px;
